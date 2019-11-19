@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl.mapper.PersonMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wl.entity.Person">
+        <id column="t_id" property="t_id" />
+        <result column="t_name" property="t_name" />
+        <result column="t_password" property="t_password" />
+        <result column="t_birth" property="t_birth" />
+        <result column="t_sex" property="t_sex" />
+        <result column="t_age" property="t_age" />
+        <result column="t_salary" property="t_salary" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        t_id, t_name, t_password, t_birth, t_sex, t_age, t_salary
+    </sql>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from t_person
+    </select>
+
+</mapper>
